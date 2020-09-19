@@ -33,7 +33,7 @@ class AirportDataList extends React.Component {
     for (let i = 0; i < this.props.options.length; i++) {
       const item = this.props.options[i];
       const searchString = item.value.toLowerCase();
-      if (searchString.indexOf(value.toLowerCase()) != -1) {
+      if (searchString.indexOf(value.toLowerCase()) !== -1) {
         filteredOptions.push({
           id: item.id,
           value: item.value,
@@ -111,7 +111,6 @@ class AirportDataList extends React.Component {
           value={textValue}
           onChange={this.updateFilter}
           onFocus={this.showList}
-          onBlur={this.hideList}
           placeholder="Choose/Search Airport"
         />
         <span className="icon" onClick={this.showList}>

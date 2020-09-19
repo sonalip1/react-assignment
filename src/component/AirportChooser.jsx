@@ -16,6 +16,9 @@ class AirportChooser extends React.Component {
       showDataList: !this.state.showDataList,
     });
   };
+  onSelectUser = (id) => {
+    console.log(id);
+  };
   render() {
     const { rawData, showDataList } = this.state;
     const optionsList = rawData.map((item) => ({
@@ -31,7 +34,12 @@ class AirportChooser extends React.Component {
         <button className="btn" onClick={this.handleBtnClick}>
           Airport Chooser
         </button>
-        {showDataList && <AirportDataList options={optionsList} />}
+        {showDataList && (
+          <AirportDataList
+            options={optionsList}
+            onSelectUser={this.onSelectUser}
+          />
+        )}
       </div>
     );
   }
